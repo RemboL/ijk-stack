@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spedition
+  labels:
+    app: spedition
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spedition
+  template:
+    metadata:
+      labels:
+        app: spedition
+    spec:
+      containers:
+      - name: spedition
+        image: spedition:0.0.1
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          periodSeconds: 5
+          httpGet:
+            path: /health
+            port: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spedition
+spec:
+  selector:
+    app: spedition
+  ports:
+  - name: "http-api"
+    port: 8080
+

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-consents
+  labels:
+    app: customer-consents
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: customer-consents
+  template:
+    metadata:
+      labels:
+        app: customer-consents
+    spec:
+      containers:
+      - name: customer-consents
+        image: customer-consents:0.0.1
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          periodSeconds: 5
+          httpGet:
+            path: /health
+            port: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-consents
+spec:
+  selector:
+    app: customer-consents
+  ports:
+  - name: "http-api"
+    port: 8080

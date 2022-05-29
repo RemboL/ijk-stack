@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: special-offers
+  labels:
+    app: special-offers
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: special-offers
+  template:
+    metadata:
+      labels:
+        app: special-offers
+    spec:
+      containers:
+      - name: special-offers
+        image: special-offers:0.0.1
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          periodSeconds: 5
+          httpGet:
+            path: /health
+            port: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: special-offers
+spec:
+  selector:
+    app: special-offers
+  ports:
+  - name: "http-api"
+    port: 8080
+
