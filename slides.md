@@ -180,4 +180,4 @@ Dashboards
 
 see:
 * https://github.com/RemboL/ijk-stack
-* https://RemboL.github.io/ijk-stack
+* https://RemboL.github.io/ijk-stack/docs/
