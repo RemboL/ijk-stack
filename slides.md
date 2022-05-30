@@ -1,5 +1,5 @@
 ---
-title: Slides Template
+title: Kubernetes monitoring in 15 minutes
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: black
@@ -25,14 +25,14 @@ revealOptions:
 
 Three-letter stack for monitoring?
 <div>
-    <img src="elk-stack.svg" style="position: relative; z-index: 1;"><!-- .element: class="fragment" -->
-    <img src="nope.png" style="position: absolute; left: 0; right: 0; width: 520px; margin-left: auto; margin-right: auto; z-index: 2; margin: none; border: none; background: 0000; box-shadow: none" /><!-- .element: class="fragment" -->
+    <img src="img/elk-stack.svg" style="position: relative; z-index: 1;"><!-- .element: class="fragment" -->
+    <img src="img/nope.png" style="position: absolute; left: 0; right: 0; width: 520px; margin-left: auto; margin-right: auto; z-index: 2; margin: none; border: none; background: 0000; box-shadow: none" /><!-- .element: class="fragment" -->
 </div>
 
 <!--s-->
 
 # IJK stack
-<img src="ijk.jpg" />
+<img src="img/ijk.jpg" />
 
 <!--s-->
 # 'I' is for Istio
@@ -49,13 +49,13 @@ Istio extends Kubernetes to establish a programmable, application-aware network 
 # 'I' is for Istio
 
 ## What?
-<img src="istio-1.jpg"/>
+<img src="img/istio-1.jpg"/>
 
 <!--v-->
 # 'I' is for Istio
 
 ## What?
-<img src="istio-2.jpg" />
+<img src="img/istio-2.jpg" />
 
 <!--v-->
 # 'I' is for Istio
@@ -87,13 +87,13 @@ Jaeger is a distributed tracing system released as open source by Uber Technolog
 # 'J' is for Jaeger
 
 ## What?
-<img src="istio-2.jpg" />
+<img src="img/istio-2.jpg" />
 
 <!--v-->
 # 'J' is for Jaeger
 
 ## What?
-<img src="jaeger-3.jpg" />
+<img src="img/jaeger-3.jpg" />
 
 <!--v-->
 # 'J' is for Jaeger
@@ -128,13 +128,13 @@ see:
 # 'K' is for Kiali
 
 ## What?
-<img src="jaeger-3.jpg" />
+<img src="img/jaeger-3.jpg" />
 
 <!--v-->
 # 'K' is for Kiali
 
 ## What?
-<img src="kiali-4.jpg" />
+<img src="img/kiali-4.jpg" />
 
 ## How?
 
@@ -150,7 +150,7 @@ see:
 * [Istio - kiali](https://istio.io/latest/docs/tasks/observability/kiali/)
 <!--s-->
 # What's next?
-<img src="attention.png">
+<img src="img/attention.png">
 
 <!--v-->
 # What's next?
